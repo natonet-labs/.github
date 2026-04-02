@@ -20,9 +20,9 @@ A high-fidelity engineering environment for learning real-world MLOps on bare me
 
 | Phase | Focus | Status |
 |---|---|---|
-| 1 — Foundation | OS provisioning, K3s cluster init, CI/CD handshake | 🔄 In Progress |
-| 2 — Acceleration | DX-M1 K8s integration, model containerization, local registry | ⏳ Upcoming |
-| 3 — Observability | Prometheus/Grafana telemetry, load benchmarking, secure tunneling | ⏳ Upcoming |
+| 1 — Foundation | OS provisioning, K3s cluster init, CI/CD handshake | In Progress |
+| 2 — Acceleration | DX-M1 K8s integration, model containerization, local registry | Upcoming |
+| 3 — Observability | Prometheus/Grafana telemetry, load benchmarking, secure tunneling | Upcoming |
 
 ---
 
