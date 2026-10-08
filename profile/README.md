@@ -13,16 +13,18 @@ Infrastructure-as-Code for Edge AI — building production-grade ML operations o
 ### [bare-metal-mlops-sandbox](https://github.com/natonet-labs/bare-metal-mlops-sandbox)
 A high-fidelity engineering environment for learning real-world MLOps on bare metal hardware — no managed cloud services, no abstractions.
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
-![Phase](https://img.shields.io/badge/Phase-1%20Foundation-blue)
+![Status](https://img.shields.io/badge/Status-Concluded-blue)
+![Phase](https://img.shields.io/badge/Reached-Phase%202.7-brightgreen)
 
 **Stack:** LattePanda 3 Delta × 2 · DeepX DX-M1 (25 TOPS NPU) · K3s · GitHub Actions · Prometheus/Grafana
 
 | Phase | Focus | Status |
 |---|---|---|
-| 1 — Foundation | OS provisioning, K3s cluster init, CI/CD handshake | In Progress |
-| 2 — Acceleration | DX-M1 K8s integration, model containerization, local registry | Upcoming |
-| 3 — Observability | Prometheus/Grafana telemetry, load benchmarking, secure tunneling | Upcoming |
+| 1 — Foundation | OS provisioning, K3s cluster, DX-M1 NPU bring-up, local registry, Prometheus/Grafana, CI/CD | Complete |
+| 2 — Acceleration & Serving | Two more NPU inference services (four total), model versioning, rollback, containerized workload, load-test baseline | Complete through 2.7 |
+| 3 — Observability & Scale | Alerting, autoscaling, automated rollback, drift detection, failure simulation | Deferred |
+
+Concluded June 2026. The cluster keeps running as the deployment target for application-layer work.
 
 ---
 
@@ -34,7 +36,7 @@ A production edge-AI system that counts driveway entries and exits 24/7. YOLOv8m
 
 | Repo | Role |
 |---|---|
-| [driveway-counter](https://github.com/natonet-labs/driveway-counter) | Pi-side — GStreamer + Hailo inference, polygon zone tracking, daily JSON reports, hourly KV sync |
+| driveway-counter *(private)* | Pi-side — GStreamer + Hailo inference, polygon zone tracking, daily JSON reports, hourly KV sync |
 | [driveway-metrics](https://github.com/natonet-labs/driveway-metrics) | Cloudflare Worker — KV storage, Bearer-auth ingest API, live dashboard with 30-day history |
 
 ---
@@ -44,7 +46,7 @@ A production edge-AI system that counts driveway entries and exits 24/7. YOLOv8m
 | Repo | Description |
 |---|---|
 | [bare-metal-mlops-sandbox](https://github.com/natonet-labs/bare-metal-mlops-sandbox) | Bare metal Edge MLOps — K3s cluster, NPU inference, IaC, observability |
-| [driveway-counter](https://github.com/natonet-labs/driveway-counter) | RPi 5 + Hailo-8 driveway vehicle counter — YOLOv8m at 15 FPS, 7% CPU |
+| driveway-counter *(private)* | RPi 5 + Hailo-8 driveway vehicle counter — YOLOv8m at 15 FPS, 7% CPU |
 | [driveway-metrics](https://github.com/natonet-labs/driveway-metrics) | Cloudflare Workers backend — KV ingest, live dashboard, 30-day history |
 | [local-llm-rag-qdrant-macos](https://github.com/natonet-labs/local-llm-rag-qdrant-macos) | Local LLM + RAG pipeline with Ollama and Qdrant on a Mac mini M4 |
 | [local-llm-rag-qdrant-ubuntu](https://github.com/natonet-labs/local-llm-rag-qdrant-ubuntu) | Local LLM + RAG pipeline with Qdrant on Ubuntu |
