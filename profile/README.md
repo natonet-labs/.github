@@ -46,7 +46,7 @@ A production edge-AI system that counts driveway entries and exits 24/7. YOLOv8m
 | [bare-metal-mlops-sandbox](https://github.com/natonet-labs/bare-metal-mlops-sandbox) | Bare metal Edge MLOps — K3s cluster, NPU inference, IaC, observability |
 | [driveway-counter](https://github.com/natonet-labs/driveway-counter) | RPi 5 + Hailo-8 driveway vehicle counter — YOLOv8m at 15 FPS, 7% CPU |
 | [driveway-metrics](https://github.com/natonet-labs/driveway-metrics) | Cloudflare Workers backend — KV ingest, live dashboard, 30-day history |
-| [edge-vision-lattepanda-3-delta-dx-m1](https://github.com/natonet-labs/edge-vision-lattepanda-3-delta-dx-m1) | Hardware bring-up docs for LattePanda 3 Delta + DeepX DX-M1 (archived reference) |
+| [local-llm-rag-qdrant-macos](https://github.com/natonet-labs/local-llm-rag-qdrant-macos) | Local LLM + RAG pipeline with Ollama and Qdrant on a Mac mini M4 |
 | [local-llm-rag-qdrant-ubuntu](https://github.com/natonet-labs/local-llm-rag-qdrant-ubuntu) | Local LLM + RAG pipeline with Qdrant on Ubuntu |
 | [tailscale-pi-exit-node](https://github.com/natonet-labs/tailscale-pi-exit-node) | Tailscale exit node configuration on Raspberry Pi |
 
