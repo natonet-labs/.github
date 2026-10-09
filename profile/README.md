@@ -45,7 +45,7 @@ A production edge-AI system that counts driveway entries and exits 24/7. YOLOv8m
 
 The brain behind an AI voice assistant: a LangGraph agent running Claude, served as an OpenAI-compatible custom-LLM endpoint so the voice provider (ElevenLabs Conversational AI today, Vapi or Retell later) is a config change, not a rewrite. It streams tokens so speech starts before the reply is finished, remembers facts across calls, and runs on the bare-metal K3s cluster above.
 
-![Status](https://img.shields.io/badge/Status-Live%20Voice-brightgreen)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
 ![Phase](https://img.shields.io/badge/Reached-Milestone%208-brightgreen)
 
 **Stack:** LangGraph · Claude · FastAPI · SQLite (persistent volume) · K3s on panda-worker · Tailscale Funnel · Prometheus/Grafana
