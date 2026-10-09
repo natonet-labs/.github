@@ -41,6 +41,24 @@ A production edge-AI system that counts driveway entries and exits 24/7. YOLOv8m
 
 ---
 
+### [voice-agent](https://github.com/natonet-labs/voice-agent)
+
+The brain behind an AI voice assistant: a LangGraph agent running Claude, served as an OpenAI-compatible custom-LLM endpoint so the voice provider (ElevenLabs Conversational AI today, Vapi or Retell later) is a config change, not a rewrite. It streams tokens so speech starts before the reply is finished, remembers facts across calls, and runs on the bare-metal K3s cluster above.
+
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+![Phase](https://img.shields.io/badge/Reached-Milestone%208-brightgreen)
+
+**Stack:** LangGraph · Claude · FastAPI · SQLite (persistent volume) · K3s on panda-worker · Tailscale Funnel · Prometheus/Grafana
+
+| Milestones | Focus | Status |
+|---|---|---|
+| 1–4 | LangGraph agent, tools + persistent memory, OpenAI-compatible endpoint, ElevenLabs text round-trip | Complete |
+| 5–7 | Container on panda-worker via the local registry, public HTTPS via Funnel, token/cost metrics in Grafana | Complete |
+| 8 | Live voice call: speech-to-text → agent → text-to-speech | Complete |
+| 9 | Front with Vapi or Retell (config-only) | Planned |
+
+---
+
 ## Repository Index
 
 | Repo | Description |
@@ -52,6 +70,7 @@ A production edge-AI system that counts driveway entries and exits 24/7. YOLOv8m
 | [local-llm-rag-qdrant-ubuntu](https://github.com/natonet-labs/local-llm-rag-qdrant-ubuntu) | Local LLM + RAG pipeline with Qdrant on Ubuntu |
 | [local-llm-rag-chromadb-rpi5](https://github.com/natonet-labs/local-llm-rag-chromadb-rpi5) | Local RAG chatbot on Raspberry Pi 5 with Ollama and ChromaDB |
 | [tailscale-pi-exit-node](https://github.com/natonet-labs/tailscale-pi-exit-node) | Tailscale exit node configuration on Raspberry Pi |
+| [voice-agent](https://github.com/natonet-labs/voice-agent) | LangGraph + Claude voice-assistant brain as an OpenAI-compatible endpoint on K3s |
 
 ---
 
@@ -67,6 +86,7 @@ CI/CD             →  GitHub Actions + self-hosted runners
 Registry          →  Private local Docker registry (on-cluster)
 Observability     →  Prometheus / Grafana (on-cluster)
 Edge Serverless   →  Cloudflare Workers + KV
+Agents / LLM      →  LangGraph + Claude, ElevenLabs Conversational AI (voice)
 Networking        →  Tailscale (secure overlay)
 OS                →  Ubuntu 24.04 LTS · Raspberry Pi OS 64-bit (Debian Trixie)
 ```
